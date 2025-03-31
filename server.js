@@ -116,6 +116,10 @@ app.get('/track-sms/:id', (req, res) => {
     });
 });
 
+// Import WhatsApp Routes
+const whatsappRoutes = require('./whatsapp-service');
+app.use('/api', whatsappRoutes);
+
 // Start the server
 app.listen(80,() => {
     console.log(`Server running on http://localhost`);
